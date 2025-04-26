@@ -25,6 +25,82 @@
         </nav>
     </header>
 
+    <!-- Chat Button (Floating) -->
+    <div class="chat-btn" onclick="openChat()">
+        <img src="./asset/images/live-chat.png" alt="Chat Icon">
+    </div>
+
+    <div id="chatModal" class="chat-modal">
+        <div class="chat-modal-content">
+            <span class="close-btn" onclick="closeChat()">&times;</span>
+            <h2 class="heading">Contact <span>Us!</span></h2>
+            
+            <div class="chat-map-wrapper">
+                <!-- Contact Form -->
+                <form action="#" id="contact-form">
+                    <!-- Full Name -->
+                    <div class="input-box">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            placeholder="Full Name" 
+                            required 
+                            pattern="[A-Za-z\s]+" 
+                            title="Name should only contain letters and spaces.">
+                    </div>
+                
+                    <!-- Email Address -->
+                    <div class="input-box">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            required
+                            title="Please enter a valid email address.">
+                    </div>
+                
+                    <!-- Mobile Number -->
+                    <div class="input-box">
+                        <input 
+                        type="text" 
+                        id="mobile" 
+                        placeholder="Mobile Number" 
+                        required 
+                        pattern="\d{11}" 
+                        maxlength="11"
+                        title="Mobile number should be exactly 11 digits.">                                
+                    </div>
+                
+                    <!-- Email Subject -->
+                    <div class="input-box">
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            placeholder="Email Subject">
+                    </div>
+                
+                    <textarea 
+                    id="message" 
+                    cols="30" 
+                    rows="6" 
+                    placeholder="Your Message" 
+                    required></textarea>                
+                
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn">Send Message</button>
+                </form>                
+    
+                <!-- Map -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d761318.0954117952!2d136.9643467898437!3d35.59681916084652!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sph!4v1745632516274!5m2!1sen!2sph"
+                        style="width: 100%; height: 90%; border: none;" allowfullscreen loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>    
+
     <!-- Title and Subtitle Section -->
     <section class="intro">
         <h1>MOH Travel & Tour</h1>
@@ -142,5 +218,14 @@
         </div>
     </footer>
 
+    <script src="./js/chat/chat.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
+    <script>
+        (function(){
+        emailjs.init("MjDv6p1dqsen4dcKA");
+        })();
+    </script>
 </body>
 </html>
